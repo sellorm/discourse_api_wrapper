@@ -9,7 +9,7 @@ release_minor:  ## Update the minor version and prepare a release
 release_major:  ## Update the major version and prepare a release
 	Rscript release.R major
 
-serve:  ## Server the API locally on port 8000
+serve:  ## Serve the API locally on port 8000
 	R -e 'plumber::pr_run(plumber::pr("plumber.R"), host="127.0.0.1", port = 8000)'
 
 clean:  ## Cleans up any unrequired files
