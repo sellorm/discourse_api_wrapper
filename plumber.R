@@ -1,6 +1,7 @@
 # Team Admin Training RStudio Community Registration API
 
 library(httr)
+library(rmarkdown)
 library(plumber)
 
 #* @apiTitle Add a RStudio Community User to a specific group

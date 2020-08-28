@@ -7,8 +7,6 @@ args <- commandArgs(trailingOnly = TRUE)
 
 current_api_version <- semver::parse_version(readLines("version.txt")[2])
 
-print(current_api_version)
-
 new_api_version <- switch(args[1],
        "major" = semver::increment_version(current_api_version, "major", 1L),
        "minor" = semver::increment_version(current_api_version, "minor", 1L),
