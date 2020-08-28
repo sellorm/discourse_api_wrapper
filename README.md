@@ -42,7 +42,7 @@ curl -X PUT \
   https://API_URL/addtogroup
 ```
 
-**httr**:
+**R/httr**:
 
 This example assume the API is hosted on RStudio Connect and that your Connect API key is stored in an environment variable called `CONNECT_API_KEY`.
 
@@ -56,6 +56,27 @@ httr::PUT(
         "Authorization" = paste("Key", Sys.getenv("CONNECT_API_KEY"))
         )
     )
+```
+
+**Python/requests**:
+
+This example assume the API is hosted on RStudio Connect and that your Connect API key is stored in an environment variable called `CONNECT_API_KEY`.
+
+```
+import requests
+import os
+import json
+
+URL = 'https://API_URL/addtogroup'
+
+api_key = os.getenv("CONNECT_API_KEY")
+auth_header = "Key {}".format(api_key)
+headers = {'Authorization': auth_header}
+data = {'username':'exampleuser', 'group_id':58}
+
+r = requests.put(URL, data = json.dumps(data), headers = headers)
+
+r.text
 ```
 
 **Return codes**:
